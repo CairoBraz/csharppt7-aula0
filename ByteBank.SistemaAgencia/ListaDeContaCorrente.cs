@@ -61,7 +61,7 @@ namespace ByteBank.SistemaAgencia
                 novoTamanho = tamanhoNecessario;
             }
 
-            Console.WriteLine("Aumentando a capaciade da lista!");
+            Console.WriteLine("Aumentando a capaciade da lista!Testando commit");
 
             ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
 
