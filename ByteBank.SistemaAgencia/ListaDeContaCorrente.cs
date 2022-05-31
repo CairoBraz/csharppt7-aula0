@@ -43,8 +43,26 @@ namespace ByteBank.SistemaAgencia
 
                 if (itemAtual.Equals(item))
                 {
-
+                    indiceItem = i;
+                    break;
                 }
+            }
+
+            for(int i = indiceItem; i < _proximaPosicao; i++)
+            {
+                _itens[i] = _itens[i + 1];
+            }
+             
+            _proximaPosicao--;
+            _itens[_proximaPosicao] = null;
+        }
+
+        public void EscreverListaNaTela()
+        {
+            for (int i = 0; i<_proximaPosicao; i++)
+            {
+                ContaCorrente conta = _itens[i];
+                Console.WriteLine($"Conta número: {conta.Agencia} e {conta.Numero}");
             }
         }
 
