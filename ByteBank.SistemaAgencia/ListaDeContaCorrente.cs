@@ -37,7 +37,7 @@ namespace ByteBank.SistemaAgencia
         {
             int indiceItem = -1;
 
-            for (int i = 0; i < _proximaPosicao; int++)
+            for (int i = 0; i < _proximaPosicao; i++)
             {
                 ContaCorrente itemAtual = _itens[i];
 
