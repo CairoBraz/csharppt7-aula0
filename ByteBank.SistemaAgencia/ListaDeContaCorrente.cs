@@ -11,6 +11,13 @@ namespace ByteBank.SistemaAgencia
     {
         private ContaCorrente[] _itens;
         private int _proximaPosicao;
+        public int Tamanho
+        {
+            get
+            {
+                return _proximaPosicao;
+            }
+        }
 
         public ListaDeContaCorrente(int capacidadeInicial = 5)
         {
@@ -28,7 +35,7 @@ namespace ByteBank.SistemaAgencia
         {
             VerificarCapacidade(_proximaPosicao + 1);
 
-            Console.WriteLine($"Adicionando item na proxima posição {_proximaPosicao}");
+            //Console.WriteLine($"Adicionando item na proxima posição {_proximaPosicao}");
 
             _itens[_proximaPosicao] = item;
             _proximaPosicao++;
@@ -57,14 +64,17 @@ namespace ByteBank.SistemaAgencia
             _itens[_proximaPosicao] = null;
         }
 
-        public void EscreverListaNaTela()
+        public ContaCorrente GetItemNoIndice(int indice)
         {
-            for (int i = 0; i<_proximaPosicao; i++)
+            if (indice < 0 || indice >= _proximaPosicao)
             {
-                ContaCorrente conta = _itens[i];
-                Console.WriteLine($"Conta número: {conta.Agencia} e {conta.Numero}");
+                throw new ArgumentOutOfRangeException(nameof(indice));
             }
+            return _itens[indice];
+            
         }
+
+
 
         private void VerificarCapacidade(int tamanhoNecessario)
         {
@@ -91,6 +101,14 @@ namespace ByteBank.SistemaAgencia
 
             _itens = novoArray;
             
+        }
+
+        public ContaCorrente this[int indice]
+        {
+            get
+            {
+                return GetItemNoIndice(indice);
+            }
         }
     }
 }
