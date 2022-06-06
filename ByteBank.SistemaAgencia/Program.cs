@@ -12,12 +12,44 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
+            Console.WriteLine(SomarVarios(55, 10, 20, 99, 100));
+
+
+           
+
+
+        }
+
+        static void TestalistaDeContaCorrente()
+        {
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
 
             lista.MeuMetodo();
             lista.MeuMetodo(numeroQualquer: 25);
 
             ContaCorrente contaDoGui = new ContaCorrente(1111, 11111111);
+
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                contaDoGui,
+                new ContaCorrente(458, 898984),
+                new ContaCorrente(654, 283928)
+            };
+
+            lista.AdicionarVarios(
+                contaDoGui,
+                new ContaCorrente(458, 898984),
+                new ContaCorrente(654, 283928),
+                new ContaCorrente(654, 283928)
+                );
+
+            lista.AdicionarVarios(contas);
+
+
+
+
+            //ContaCorrente contaDoGui = new ContaCorrente(1111, 11111111);
             lista.Adicionar(contaDoGui);
 
             lista.Adicionar(new ContaCorrente(458, 898984));
@@ -33,7 +65,7 @@ namespace ByteBank.SistemaAgencia
                 Console.WriteLine($"Item na posição {i}: Conta {itemAtual.Numero} e  Agência {itemAtual.Agencia}");
             }
 
-           
+
 
             // e assim por diante
 
@@ -42,8 +74,16 @@ namespace ByteBank.SistemaAgencia
 
             Console.WriteLine("Após remover");
             Console.ReadLine();
+        }
 
-
+        static int SomarVarios(params int[] numeros)
+        {
+            int acumulador = 0;
+            foreach (int numero in numeros)
+            {
+                acumulador += numero;
+            }
+            return acumulador;
         }
 
         static void TestaArrayDeContasCorrente()
