@@ -14,22 +14,27 @@ namespace ByteBank.SistemaAgencia
         {
             Lista<int> idades = new Lista<int>();
 
+            idades.Adicionar(1);
             idades.Adicionar(5);
-            idades.Adicionar(10);
-            idades.AdicionarVarios(3, 4, 10, 23);
+            idades.Adicionar(14);
+            idades.Adicionar(25);
+            idades.Adicionar(38);
+            idades.Adicionar(61);
 
-            int idadeSoma = 0;
+
 
             for (int i = 0; i < idades.Tamanho; i++)
             {
                 int idadeAtual = idades[i];
+                Console.WriteLine(idadeAtual);
             }
-            
-            Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
-            Console.WriteLine(SomarVarios(55, 10, 20, 99, 100));
+
 
             Console.ReadLine();
 
+
+            //Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
+            //onsole.WriteLine(SomarVarios(55, 10, 20, 99, 100));
         }
 
         static void TestaListaDeObject()
