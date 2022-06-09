@@ -25,6 +25,8 @@ namespace ByteBank.SistemaAgencia
 
             ListExtensoes.AdicionarVarios(idades, 11, 22, 33, 68);
 
+            idades.AdicionarVarios(14, 24, 34, 44);
+
 
             idades.Remove(5);
 
