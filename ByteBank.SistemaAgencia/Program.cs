@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -28,6 +29,7 @@ namespace ByteBank.SistemaAgencia
             idades.AdicionarVarios(14, 24, 34, 44);
 
 
+
             idades.Remove(5);
 
             for (int i = 0; i < idades.Count; i++)
@@ -35,6 +37,9 @@ namespace ByteBank.SistemaAgencia
                 int idadeAtual = idades[i];
                 Console.WriteLine(idadeAtual);
             }
+
+            //string cairo = "Cairo";
+            //cairo.TesteGenerico<int>();
 
 
             Console.ReadLine();
