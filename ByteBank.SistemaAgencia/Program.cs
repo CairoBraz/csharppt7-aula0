@@ -13,29 +13,50 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            var contas = new List<ContaCorrente>()
+            {
+                    new ContaCorrente(341, 57480),
+                    new ContaCorrente(342, 45678),
+                    new ContaCorrente(340, 48950),
+                    new ContaCorrente(290, 18950)
+            };
+            contas.Sort();
+
+            foreach (var conta in contas)
+            {
+                Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
+            }
 
 
-            var chamada = 45;
-            var materia = "Química";
-
-            var conta = new ContaCorrente(153, 45684);
-            var gerenciador = new GerenciadorBonificacao();
-            var gerenciadores = new List<GerenciadorBonificacao>();
-
-            conta.Depositar(50);
+            //string cairo = "Cairo";
+            //cairo.TesteGenerico<int>();
 
 
+            Console.ReadLine();
 
 
+            //Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
+            //onsole.WriteLine(SomarVarios(55, 10, 20, 99, 100));
+        }
+
+        static void TestaSorte()
+        {
+            var nomes = new List<string>()
+            {
+                "Zena",
+                "Dajuda",
+                "Ana"
+            };
+
+            nomes.Sort();
+
+            foreach (var nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
 
 
-
-
-
-
-
-
-            List<int> idades = new List<int>();
+            var idades = new List<int>();
 
             idades.Add(1);
             idades.Add(5);
@@ -50,7 +71,9 @@ namespace ByteBank.SistemaAgencia
 
             idades.AdicionarVarios(14, 24, 34, 44);
 
+            idades.AdicionarVarios(99, -1);
 
+            idades.Sort();
 
             idades.Remove(5);
 
@@ -59,16 +82,6 @@ namespace ByteBank.SistemaAgencia
                 int idadeAtual = idades[i];
                 Console.WriteLine(idadeAtual);
             }
-
-            //string cairo = "Cairo";
-            //cairo.TesteGenerico<int>();
-
-
-            Console.ReadLine();
-
-
-            //Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
-            //onsole.WriteLine(SomarVarios(55, 10, 20, 99, 100));
         }
 
         static void TestaListaDeObject()
