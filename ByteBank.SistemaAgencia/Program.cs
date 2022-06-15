@@ -13,6 +13,28 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+
+
+            var chamada = 45;
+            var materia = "Química";
+
+            var conta = new ContaCorrente(153, 45684);
+            var gerenciador = new GerenciadorBonificacao();
+            var gerenciadores = new List<GerenciadorBonificacao>();
+
+            conta.Depositar(50);
+
+
+
+
+
+
+
+
+
+
+
+
             List<int> idades = new List<int>();
 
             idades.Add(1);
