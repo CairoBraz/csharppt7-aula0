@@ -88,14 +88,14 @@ namespace ByteBank.SistemaAgencia
                 novoTamanho = tamanhoNecessario;
             }
 
-            Console.WriteLine("Aumentando a capaciade da lista!Testando commit");
+            //Console.WriteLine("Aumentando a capaciade da lista!Testando commit");
 
             T[] novoArray = new T[novoTamanho];
 
             for (int indice = 0; indice < _itens.Length; indice++)
             {
                 novoArray[indice] = _itens[indice];
-                Console.WriteLine(".");
+                //Console.WriteLine(".");
             }
 
             _itens = novoArray;

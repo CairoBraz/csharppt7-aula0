@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
+using ByteBank.SistemaAgencia.Comparadores;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -12,24 +14,86 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            Lista<int> idades = new Lista<int>();
-
-            idades.Adicionar(5);
-            idades.Adicionar(10);
-            idades.AdicionarVarios(3, 4, 10, 23);
-
-            int idadeSoma = 0;
-
-            for (int i = 0; i < idades.Tamanho; i++)
+            var contas = new List<ContaCorrente>()
             {
-                int idadeAtual = idades[i];
+                    new ContaCorrente(341, 57480),
+                    new ContaCorrente(342, 45678),
+                    null,
+                    new ContaCorrente(340, 48950),
+                    new ContaCorrente(290, 18950),
+                    null,
+                    null,
+                    new ContaCorrente(456, 99999),
+                    new ContaCorrente(001, 1)
+            };
+            //contas.Sort();
+            //contas.Sort(new ComparadorContaCorrentePorAgencia());
+
+            // var listaSemNulos = new List<ContaCorrente>();
+            var contasOrdenadas = contas
+                .Where(conta => conta != null)
+                .OrderBy(conta => conta.Numero);
+
+            foreach (var conta in contasOrdenadas)
+            {
+                    Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
             }
-            
-            Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
-            Console.WriteLine(SomarVarios(55, 10, 20, 99, 100));
+
+
+            //string cairo = "Cairo";
+            //cairo.TesteGenerico<int>();
+
 
             Console.ReadLine();
 
+
+            //Console.WriteLine(SomarVarios(1, 2, 4, 5, 6));
+            //onsole.WriteLine(SomarVarios(55, 10, 20, 99, 100));
+        }
+
+        static void TestaSorte()
+        {
+            var nomes = new List<string>()
+            {
+                "Zena",
+                "Dajuda",
+                "Ana"
+            };
+
+            nomes.Sort();
+
+            foreach (var nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
+
+
+            var idades = new List<int>();
+
+            idades.Add(1);
+            idades.Add(5);
+            idades.Add(14);
+            idades.Add(25);
+            idades.Add(38);
+            idades.Add(61);
+
+            idades.AddRange(new int[] { 44, 55, 66 });
+
+            ListExtensoes.AdicionarVarios(idades, 11, 22, 33, 68);
+
+            idades.AdicionarVarios(14, 24, 34, 44);
+
+            idades.AdicionarVarios(99, -1);
+
+            idades.Sort();
+
+            idades.Remove(5);
+
+            for (int i = 0; i < idades.Count; i++)
+            {
+                int idadeAtual = idades[i];
+                Console.WriteLine(idadeAtual);
+            }
         }
 
         static void TestaListaDeObject()

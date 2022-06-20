@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparadores\ComparadorContaCorrentePorAgencia.cs" />
     <Compile Include="Estagiario.cs" />
+    <Compile Include="Extensoes\ListExtensoes.cs" />
     <Compile Include="Lista.cs" />
     <Compile Include="ListaDeContaCorrente.cs" />
     <Compile Include="ListaDeObject.cs" />
@@ -66,5 +68,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
