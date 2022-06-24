@@ -17,6 +17,13 @@ namespace ByteBank.ImportacaoExportacao
             var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open);
             var buffer = new byte[1024];  // 1KB = 1024 Bytes
             var numeroDeBytesLidos = -1;
+            var textoComQuebraDeLinha = "Primeira linha \nSegunda linha!";
+            var textocomContraBarraNNaEscrita = "Primeira linha \\n ainda na primeira linha!";
+
+
+            Console.WriteLine(textoComQuebraDeLinha);
+            Console.WriteLine(textocomContraBarraNNaEscrita);
+            Console.ReadLine();
 
             while (numeroDeBytesLidos != 0)
             {
@@ -32,11 +39,16 @@ namespace ByteBank.ImportacaoExportacao
 
         static  void EscreverBuffer(byte[] buffer)
         {
-            foreach (var meuByte in buffer)
-            {
-                Console.Write(meuByte);
-                Console.Write(" ");
-            }
+            var utf8 = Encoding.Default;
+            var texto = utf8.GetString(buffer);
+
+            Console.Write(texto);
+
+            //foreach (var meuByte in buffer)
+            //{
+            //    Console.Write(meuByte);
+            //    Console.Write(" ");
+            //}
         }
     }
 }
