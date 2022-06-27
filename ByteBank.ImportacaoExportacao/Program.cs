@@ -31,16 +31,17 @@ namespace ByteBank.ImportacaoExportacao
                 {
                     numeroDeBytesLidos = fluxoDoArquivo.Read(buffer, 0, 1024);
 
-                    EscreverBuffer(buffer);
+                    Console.WriteLine($"Quantidade de bites lidos: {numeroDeBytesLidos}");
+                    EscreverBuffer(buffer, numeroDeBytesLidos);
                 }
             }
             Console.ReadLine();
 
         }
-        static void EscreverBuffer(byte[] buffer)
+        static void EscreverBuffer(byte[] buffer, int bytesLidos)
         {
             var utf8 = Encoding.Default;
-            var texto = utf8.GetString(buffer);
+            var texto = utf8.GetString(buffer, 0, bytesLidos);
 
             Console.Write(texto);
 
