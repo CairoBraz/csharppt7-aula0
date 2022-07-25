@@ -11,9 +11,15 @@ namespace ByteBank.ImportacaoExportacao
 {
     partial class Program
     {
-        static void Main(string[] args)
+        static void CriarArquivo()
         {
-            Console.ReadLine();
+            var caminhoNovoArquivo = "contasExportadas.csv";
+
+            using (var fluxoDeArquivo = new FileStream(caminhoNovoArquivo, FileMode.Create))
+            {
+                var contaComoString = "456,7895,4785.40,Gustavo Santos";
+            }
         }
+
     }
- }
+}
