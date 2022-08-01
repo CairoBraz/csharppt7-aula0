@@ -28,7 +28,9 @@ namespace ByteBank.ImportacaoExportacao
             //}
 
             //EscritaBinaria();
-            LeituraBinaria();
+            //LeituraBinaria();
+            UsarStreamDeEntrada();
+
 
             Console.WriteLine("Aplicação finalizada...");
             Console.ReadLine();
