@@ -37,7 +37,7 @@ namespace ByteBank.ImportacaoExportacao
             Console.WriteLine("Arquivo escrevendoComAClasseFile criado!");
 
             var bytesArquivo = File.ReadAllBytes("contas.txt");
-            Console.WriteLine($"Arquivo contas.txt possui{ bytesArquivo.Lenght} bytes");
+            Console.WriteLine($"Arquivo contas.txt possui{ bytesArquivo.Length} bytes");
 
 
             var linhas = File.ReadAllLines("contas.txt");
