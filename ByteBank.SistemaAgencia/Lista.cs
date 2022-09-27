@@ -96,6 +96,7 @@ namespace ByteBank.SistemaAgencia
             {
                 novoArray[indice] = _itens[indice];
                 //Console.WriteLine(".");
+                //Teste
             }
 
             _itens = novoArray;
